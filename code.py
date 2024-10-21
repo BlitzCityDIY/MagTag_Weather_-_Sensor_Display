@@ -174,7 +174,7 @@ def update_today(data):
     """Update today weather info."""
     # date text
     print(data)
-    s = data["daily"]["time"][0] + data["utc_offset_seconds"]
+    s = data["current"]["time"] + data["utc_offset_seconds"]
     t = time.localtime(s)
     today_date.text = "{} {} {}, {}".format(
         DAYS[t.tm_wday].upper(), MONTHS[t.tm_mon - 1].upper(), t.tm_mday, t.tm_year
